@@ -1,2 +1,2 @@
-!#/bin/bash
-/etc/hostname
+#!/bin/bash
+cat /etc/hostname
