@@ -1,2 +1,2 @@
 #!/bin/bash
-fdisk -l
+sudo fdisk -l
