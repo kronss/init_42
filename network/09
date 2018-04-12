@@ -1,6 +1,6 @@
 #!/bin/bash
-nslookup 42.fr | grep "Address: " | awk '{print $2}' | sort
+# nslookup 42.fr | grep "Address: " | awk '{print $2}' | sort
 
-# 163.172.250.11
-# 163.172.250.12
-# 163.172.250.13
+163.172.250.11
+163.172.250.12
+163.172.250.13
