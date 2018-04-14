@@ -1,0 +1,21 @@
+#!/bin/bash
+
+FOLDER=~/.tmp
+
+mkdir -p $FOLDER
+if [ ! -f /root/oldsum ]
+then
+
+	echo "0 0 * * * /root/42init/04" >> /root/crontab
+	crontab -u root ~/crontab
+	md5sum /etc/crontab > $FOLDER/newsum	
+
+else
+
+	md5sum /etc/crontab > $FOLDER/newsum
+	if [ "$(diff /root/newsum /root/oldsum)" != "" ]
+	then
+		mail -s "Crontab changed" root
+	fi
+fi
+mv $FOLDER/newsum $FOLDER/oldsum
